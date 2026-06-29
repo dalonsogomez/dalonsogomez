@@ -1,0 +1,35 @@
+name: Validate profile README
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate required profile files
+        run: |
+          test -s README.md
+          test -s assets/profile-header.svg
+          grep -q "Daniel Alonso Gomez" README.md
+          grep -q "dalonsogomez" README.md
+          grep -q "github-contribution-grid-snake" README.md
+
+      - name: Validate SVG is well-formed XML
+        run: |
+          python - <<'PY'
+          import xml.etree.ElementTree as ET
+          ET.parse("assets/profile-header.svg")
+          print("profile-header.svg is valid XML")
+          PY

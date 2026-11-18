@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300" role="img" aria-labelledby="title desc">
+  <title id="title">Daniel Alonso Gómez</title>
+  <desc id="desc">Senior Software Engineer working on AI agents and ML systems, based in Madrid.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#E8F6FD"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#36BCF7"/>
+      <stop offset="100%" stop-color="#7C6CF2"/>
+    </linearGradient>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.2" fill="#D8EEF8"/>
+    </pattern>
+    <style>
+      .flow { stroke:#36BCF7; stroke-opacity:.45; stroke-width:1.4; stroke-dasharray:4 7; animation: flow 2.6s linear infinite; }
+      @keyframes flow { to { stroke-dashoffset:-22; } }
+      .halo { transform-box:fill-box; transform-origin:center; animation: halo 3.2s ease-out infinite; }
+      @keyframes halo { 0% { transform:scale(1); opacity:.7; } 100% { transform:scale(2.6); opacity:0; } }
+      @keyframes type0 { 0%,0.0% {transform:scaleX(0)} 13.333%,28.333% {transform:scaleX(1)} 31.667%,100% {transform:scaleX(0)} }
+      @keyframes caret0 { 0%,0.0% {transform:translateX(0)} 13.333%,28.333% {transform:translateX(478.8px)} 31.667%,100% {transform:translateX(0)} }
+      @keyframes show0 { 0%,0.0% {opacity:0} 0.01%,31.667% {opacity:1} 31.677000000000003%,100% {opacity:0} }
+      .clip0 { transform-box:fill-box; transform-origin:0 0; animation:type0 13.5s steps(42,end) infinite; }
+      .caret0 { animation:caret0 13.5s steps(42,end) infinite; }
+      .line0 { animation:show0 13.5s linear infinite; }
+      @keyframes type1 { 0%,33.333% {transform:scaleX(0)} 46.666%,61.666% {transform:scaleX(1)} 65.0%,100% {transform:scaleX(0)} }
+      @keyframes caret1 { 0%,33.333% {transform:translateX(0)} 46.666%,61.666% {transform:translateX(467.4px)} 65.0%,100% {transform:translateX(0)} }
+      @keyframes show1 { 0%,33.333% {opacity:0} 33.342999999999996%,65.0% {opacity:1} 65.01%,100% {opacity:0} }
+      .clip1 { transform-box:fill-box; transform-origin:0 0; animation:type1 13.5s steps(41,end) infinite; }
+      .caret1 { animation:caret1 13.5s steps(41,end) infinite; }
+      .line1 { animation:show1 13.5s linear infinite; }
+      @keyframes type2 { 0%,66.667% {transform:scaleX(0)} 80.0%,95.0% {transform:scaleX(1)} 98.334%,100% {transform:scaleX(0)} }
+      @keyframes caret2 { 0%,66.667% {transform:translateX(0)} 80.0%,95.0% {transform:translateX(467.4px)} 98.334%,100% {transform:translateX(0)} }
+      @keyframes show2 { 0%,66.667% {opacity:0} 66.677%,98.334% {opacity:1} 98.34400000000001%,100% {opacity:0} }
+      .clip2 { transform-box:fill-box; transform-origin:0 0; animation:type2 13.5s steps(41,end) infinite; }
+      .caret2 { animation:caret2 13.5s steps(41,end) infinite; }
+      .line2 { animation:show2 13.5s linear infinite; }
+      @keyframes blink { 50% {opacity:0} }
+      .blink { animation: blink 1s step-end infinite; }
+      @media (prefers-reduced-motion: reduce) {
+        .clip0, .caret0, .line0, .blink, .flow, .halo { animation: none !important; }
+        .line1, .line2 { display: none; }
+      }
+    </style>
+  </defs>
+  <rect x="1" y="1" width="1198" height="298" rx="18" fill="url(#bg)" stroke="#D0D7DE"/>
+  <rect x="1" y="1" width="1198" height="298" rx="18" fill="url(#dots)" opacity=".7"/>
+  <rect x="64" y="56" width="4" height="190" rx="2" fill="url(#accent)"/>
+
+  <text x="92" y="76" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="16" fill="#57606A">~/dalonsogomez <tspan fill="#0A6C9C">$</tspan> whoami</text>
+  <text x="90" y="138" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" font-size="54" font-weight="700" fill="#0D1117" letter-spacing="-0.5">Daniel Alonso Gómez</text>
+  <text x="92" y="182" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" font-size="23" fill="#24292F">Senior Software Engineer  ·  AI agents &amp; ML systems</text>
+  <text x="92" y="238" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="19" fill="#57606A" text-anchor="end" dx="-6">&gt;</text>
+    <clipPath id="clip0"><rect class="clip0" x="92" y="219" width="478.8" height="27"/></clipPath>
+    <g class="line0">
+      <text x="92" y="238" textLength="478.8" lengthAdjust="spacingAndGlyphs" clip-path="url(#clip0)"
+            font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="19" fill="#0A6C9C">building context engines for coding agents</text>
+      <g class="caret0"><rect class="blink" x="94" y="221" width="10" height="21" rx="1.5" fill="#36BCF7"/></g>
+    </g>
+    <clipPath id="clip1"><rect class="clip1" x="92" y="219" width="467.4" height="27"/></clipPath>
+    <g class="line1">
+      <text x="92" y="238" textLength="467.4" lengthAdjust="spacingAndGlyphs" clip-path="url(#clip1)"
+            font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="19" fill="#0A6C9C">shipping open banking APIs at Tink (Visa)</text>
+      <g class="caret1"><rect class="blink" x="94" y="221" width="10" height="21" rx="1.5" fill="#36BCF7"/></g>
+    </g>
+    <clipPath id="clip2"><rect class="clip2" x="92" y="219" width="467.4" height="27"/></clipPath>
+    <g class="line2">
+      <text x="92" y="238" textLength="467.4" lengthAdjust="spacingAndGlyphs" clip-path="url(#clip2)"
+            font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="19" fill="#0A6C9C">evaluating ML models like production code</text>
+      <g class="caret2"><rect class="blink" x="94" y="221" width="10" height="21" rx="1.5" fill="#36BCF7"/></g>
+    </g>
+  <text x="92" y="274" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" font-size="15" fill="#57606A">Madrid, Spain  ·  Python · TypeScript · MCP  ·  open to good conversations</text>
+
+  <g><line class="flow" style="animation-delay:-0.00s" x1="930" y1="150" x2="820" y2="78"/><line class="flow" style="animation-delay:-0.37s" x1="930" y1="150" x2="1040" y2="70"/><line class="flow" style="animation-delay:-0.74s" x1="930" y1="150" x2="1110" y2="160"/><line class="flow" style="animation-delay:-1.11s" x1="930" y1="150" x2="1050" y2="238"/><line class="flow" style="animation-delay:-1.48s" x1="930" y1="150" x2="900" y2="250"/><line class="flow" style="animation-delay:-1.85s" x1="930" y1="150" x2="800" y2="190"/><line class="flow" style="animation-delay:-2.22s" x1="930" y1="150" x2="990" y2="108"/><line class="flow" style="animation-delay:-2.59s" x1="930" y1="150" x2="1000" y2="196"/><line class="flow" style="animation-delay:-2.96s" x1="820" y1="78" x2="870" y2="120"/><line class="flow" style="animation-delay:-3.33s" x1="870" y1="120" x2="800" y2="190"/><line class="flow" style="animation-delay:-3.70s" x1="1040" y1="70" x2="1135" y2="92"/><line class="flow" style="animation-delay:-4.07s" x1="990" y1="108" x2="1040" y2="70"/><line class="flow" style="animation-delay:-4.44s" x1="1000" y1="196" x2="1050" y2="238"/><line class="flow" style="animation-delay:-4.81s" x1="1110" y1="160" x2="1000" y2="196"/><line class="flow" style="animation-delay:-5.18s" x1="820" y1="78" x2="760" y2="120"/><line class="flow" style="animation-delay:-5.55s" x1="760" y1="120" x2="800" y2="190"/></g>
+  <g><circle class="halo" style="animation-delay:-0.00s" cx="930" cy="150" r="13" fill="none" stroke="#36BCF7" stroke-width="1.5"/><circle cx="930" cy="150" r="13" fill="url(#accent)" opacity="1"/><circle class="halo" style="animation-delay:-0.53s" cx="820" cy="78" r="7" fill="none" stroke="#36BCF7" stroke-width="1.5"/><circle cx="820" cy="78" r="7" fill="#36BCF7" opacity="1"/><circle class="halo" style="animation-delay:-1.06s" cx="1040" cy="70" r="8" fill="none" stroke="#36BCF7" stroke-width="1.5"/><circle cx="1040" cy="70" r="8" fill="#36BCF7" opacity="1"/><circle class="halo" style="animation-delay:-1.59s" cx="1110" cy="160" r="7" fill="none" stroke="#36BCF7" stroke-width="1.5"/><circle cx="1110" cy="160" r="7" fill="#36BCF7" opacity="1"/><circle class="halo" style="animation-delay:-2.12s" cx="1050" cy="238" r="8" fill="none" stroke="#36BCF7" stroke-width="1.5"/><circle cx="1050" cy="238" r="8" fill="#36BCF7" opacity="1"/><circle class="halo" style="animation-delay:-2.65s" cx="900" cy="250" r="7" fill="none" stroke="#36BCF7" stroke-width="1.5"/><circle cx="900" cy="250" r="7" fill="#36BCF7" opacity="1"/><circle class="halo" style="animation-delay:-3.18s" cx="800" cy="190" r="6" fill="none" stroke="#36BCF7" stroke-width="1.5"/><circle cx="800" cy="190" r="6" fill="#36BCF7" opacity="0.75"/><circle class="halo" style="animation-delay:-3.71s" cx="990" cy="108" r="5" fill="none" stroke="#36BCF7" stroke-width="1.5"/><circle cx="990" cy="108" r="5" fill="#36BCF7" opacity="0.75"/><circle class="halo" style="animation-delay:-4.24s" cx="1000" cy="196" r="5" fill="none" stroke="#36BCF7" stroke-width="1.5"/><circle cx="1000" cy="196" r="5" fill="#36BCF7" opacity="0.75"/><circle class="halo" style="animation-delay:-4.77s" cx="870" cy="120" r="5" fill="none" stroke="#36BCF7" stroke-width="1.5"/><circle cx="870" cy="120" r="5" fill="#36BCF7" opacity="0.75"/><circle class="halo" style="animation-delay:-5.30s" cx="1135" cy="92" r="4" fill="none" stroke="#36BCF7" stroke-width="1.5"/><circle cx="1135" cy="92" r="4" fill="#36BCF7" opacity="0.75"/><circle class="halo" style="animation-delay:-5.83s" cx="760" cy="120" r="4" fill="none" stroke="#36BCF7" stroke-width="1.5"/><circle cx="760" cy="120" r="4" fill="#36BCF7" opacity="0.75"/></g>
+</svg>

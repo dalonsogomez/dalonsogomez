@@ -16,20 +16,12 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      - name: Validate required profile files
+      - name: Assets are up to date with the generator
         run: |
-          test -s README.md
-          test -s assets/profile-header.svg
-          grep -q "Daniel Alonso Gomez" README.md
-          grep -q "dalonsogomez" README.md
-          grep -q "github-contribution-grid-snake" README.md
+          python3 scripts/build_assets.py
+          git diff --exit-code -- assets/
 
-      - name: Validate SVG is well-formed XML
-        run: |
-          python - <<'PY'
-          import xml.etree.ElementTree as ET
-          ET.parse("assets/profile-header.svg")
-          print("profile-header.svg is valid XML")
-          PY
+      - name: README and assets are consistent
+        run: python3 scripts/check_profile.py

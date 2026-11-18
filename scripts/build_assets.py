@@ -52,30 +52,28 @@ TYPED_LINES = [
     "evaluating ML models like production code",
 ]
 
+# Only projects with verifiable quality signals (README, tests, CI, licence).
+# Tags state facts a reviewer can check in the repo, not adjectives.
 PROJECTS = [
-    {
-        "slug": "braid-kg",
-        "title": "braid-kg",
-        "repo": "dalonsogomez/braid-kg",
-        "description": "Analyses any directory end to end and turns it into a "
-        "persistent knowledge-graph memory that agents can query.",
-        "tags": ["Knowledge graphs", "Agent memory"],
-    },
-    {
-        "slug": "fairlead",
-        "title": "fairlead",
-        "repo": "dalonsogomez/fairlead",
-        "description": "Repo-scoped context guidance for coding agents: the "
-        "right rules, at the right path, at the right time.",
-        "tags": ["Coding agents", "Context engineering"],
-    },
     {
         "slug": "swarmtrader",
         "title": "swarmtrader",
         "repo": "dalonsogomez-ai/swarmtrader",
-        "description": "Reproducible multi-agent equity research: walk-forward "
-        "evaluation, calibrated probabilities and overfitting controls.",
-        "tags": ["Python", "Multi-agent", "Quant ML"],
+        "wide": True,
+        "kicker": "FLAGSHIP",
+        "description": "Multi-agent equity research you can audit: walk-forward "
+        "evaluation, out-of-sample probability calibration and statistical "
+        "controls for backtest overfitting. When the evidence is not there, "
+        "it abstains instead of pretending.",
+        "tags": ["Python", "Multi-agent", "Calibration", "CI + 277 tests", "MIT"],
+    },
+    {
+        "slug": "braid-kg",
+        "title": "braid-kg",
+        "repo": "dalonsogomez/braid-kg",
+        "description": "MCP-first persistent memory, knowledge graph and RAG "
+        "for coding agents such as Claude Code, Codex and Cursor.",
+        "tags": ["MCP", "Knowledge graph", "RAG", "CI + tests"],
     },
     {
         "slug": "vp-class-diagram-agent",
@@ -83,7 +81,7 @@ PROJECTS = [
         "repo": "dalonsogomez/vp-class-diagram-agent-afg",
         "description": "Local MCP server and Visual Paradigm plugin that "
         "generates editable UML class-diagram projects.",
-        "tags": ["MCP", "Python", "UML"],
+        "tags": ["MCP", "Python", "CI + tests", "MIT"],
     },
 ]
 
@@ -214,7 +212,10 @@ def _pill(x: float, y: float, label: str, t: dict) -> tuple[str, float]:
 
 def build_card(project: dict, theme: str) -> str:
     t = THEMES[theme]
-    lines = textwrap.wrap(project["description"], width=60)[:3]
+    # Wide cards render at 100% and normal ones at 49%, so 1060 vs 520 keeps
+    # the same on-screen scale for text in both.
+    width = 1060 if project.get("wide") else 520
+    lines = textwrap.wrap(project["description"], width=124 if project.get("wide") else 60)[:3]
     desc = "".join(
         f'<text x="32" y="{82 + i * 21}" font-family="{SANS}" font-size="15" fill="{t["text"]}">{escape(line)}</text>'
         for i, line in enumerate(lines)
@@ -224,16 +225,26 @@ def build_card(project: dict, theme: str) -> str:
         svg, w = _pill(x, 150, tag, t)
         pills.append(svg)
         x += w + 8
-    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 194" width="520" height="194" role="img" aria-labelledby="title desc">
+    kicker = ""
+    if project.get("kicker"):
+        kw = len(project["kicker"]) * 7.6 + 20
+        kx = 54 + len(project["title"]) * 11.4 + 14
+        kicker = (
+            f'<rect x="{kx:.1f}" y="33" width="{kw:.1f}" height="22" rx="11" fill="url(#accent)"/>'
+            f'<text x="{kx + kw / 2:.1f}" y="48.5" text-anchor="middle" font-family="{MONO}" '
+            f'font-size="11.5" font-weight="700" letter-spacing="1" fill="#FFFFFF">{escape(project["kicker"])}</text>'
+        )
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} 194" width="{width}" height="194" role="img" aria-labelledby="title desc">
   <title id="title">{escape(project['title'])}</title>
   <desc id="desc">{escape(project['description'])}</desc>
   <defs>{_defs_background(t, "bg")}</defs>
-  <rect x="1" y="1" width="518" height="192" rx="14" fill="url(#bg)" stroke="{t['border']}"/>
+  <rect x="1" y="1" width="{width - 2}" height="192" rx="14" fill="url(#bg)" stroke="{t['border']}"/>
   <rect x="1" y="24" width="4" height="146" rx="2" fill="url(#accent)"/>
   <circle cx="38" cy="44" r="6" fill="none" stroke="{BRAND}" stroke-width="2"/>
   <circle cx="38" cy="44" r="2.2" fill="{BRAND}"/>
   <text x="54" y="50" font-family="{MONO}" font-size="19" font-weight="700" fill="{t['title']}">{escape(project['title'])}</text>
-  <text x="488" y="50" text-anchor="end" font-family="{MONO}" font-size="12" fill="{t['muted']}">{escape(project['repo'].split('/')[0])}</text>
+  {kicker}
+  <text x="{width - 32}" y="50" text-anchor="end" font-family="{MONO}" font-size="12" fill="{t['muted']}">{escape(project['repo'] if project.get('wide') else project['repo'].split('/')[0])}</text>
   {desc}
   {''.join(pills)}
 </svg>

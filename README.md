@@ -18,7 +18,7 @@
 
 ## About me
 
-I'm **Dani**, a senior software engineer in Madrid. By day I work on open banking at **Tink (Visa)**; I'm also studying MLOps at **Universidad Pontificia Comillas (ICAI)**.
+I'm **Dani**, a senior software engineer in Madrid. I'm also studying MLOps at **Universidad Pontificia Comillas (ICAI)**.
 
 What I build in the open revolves around one problem: **giving AI agents the right context, and proving that what they produce actually works**. That means persistent memory for codebases, MCP servers that connect models to real tools, and ML research that is reproducible before it is impressive.
 
